@@ -18,5 +18,4 @@ echo "{
     \"password\":\"$password\",
     \"timeout\":60,
     \"method\":\"chacha20-ietf-poly1305\"
-}" > /etc/shadowsocks-libev/config.json && \
-service shadowsocks-libev restart
+}" > /etc/shadowsocks-libev/config.json && service shadowsocks-libev restart
