@@ -1,7 +1,7 @@
 #! /bin/sh
 
 echo "Installing shadowsocks-libev..."
-apt install shadowsocks-libev
+apt install shadowsocks-libev -y
 
 echo "Configuring..."
 echo -n "Input your server ip address: "
@@ -18,7 +18,5 @@ echo "{
     \"password\":\"$password\",
     \"timeout\":60,
     \"method\":\"chacha20-ietf-poly1305\"
-}" > /etc/shadowsocks-libev/config.json
-
-echo "Starting service..."
+}" > /etc/shadowsocks-libev/config.json && \ 
 service shadowsocks-libev restart
