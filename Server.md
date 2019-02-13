@@ -95,3 +95,56 @@ __注意：使用上面这个链接注册，可以直接获得50美元试用金�
 在最后的`Server Hostname & Label`这里分别填上你想给你的这个服务器取的名字，如果你不知道填什么，那就两个都填server即可。
 
 最后点击`Deploy Now`，等待部署完成即可。
+
+### 安装配置 Shadowsocks 服务端
+
+当服务器部署完成后，在[my.vultr.com](https://my.vultr.com/)就能看到正在运行的服务器，如图：
+
+![my.vultr.com](./img/my.vultr.com.png)
+
+点击服务器的名字，即可查看对应服务器的详情，如图：
+
+![my.vultr.com-subs](./img/my.vultr.com-subs.png)
+
+注意图中隐去了服务器的IP地址和所在地区。
+
+这里我们需要记住两个东西，一个是服务器的IP地址，即图中的`IP Address`，另一个是登录密码，也就是图中的`Password`。登录密码默认是隐藏的，点那个小眼睛就可以看到。
+
+* Windows用户配置指南
+
+
+1. 点击[这里](https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.70-installer.msi)下载安装PuTTY，安装过程一路下一步即可。
+
+2. 打开PuTTY，界面如图：
+
+![putty-main](./img/putty-main.png)
+
+在`Host Name(or IP address)`这里填入你的服务器的IP地址，然后点击底部的`Open`。如果IP地址没有填错的话你将看到这个界面：
+
+![putty-confirm](./img/putty-confirm.png)
+
+这是问你是否信任这个服务器，直接点是。然后会看到这个界面：
+
+![putty-login](./img/putty-login.png)
+
+输入`root`，按Enter，然后输入登录密码（刚才让记住的登录密码）再按Enter。为了避免出错，可以复制密码，然后在这个黑框里点右键，即可完成登录。如果密码没有输错的话，你将看到这个界面：
+
+![putty-logedin](./img/putty-logedin.png)
+
+恭喜你，已经顺利连接到服务器了！
+
+3. 像刚才复制密码一样，复制下面这一行命令：
+
+``` shell
+apt install curl -y && sh -c "$(curl -fsSL https://raw.githubusercontent.com/nickyc975/shadowsocks-guide/master/scripts/deploy_server.sh)"
+```
+
+然后到黑框里右键，然后按Enter，就会自动开始配置shadowsocks服务端。配置过程中需要输入三项信息：
+
+1. 当提示`Input your server ip address: `时，输入你服务器的IP地址，然后按Enter；
+
+2. 当提示`Input your server port: `时，输入一个介于 __1024__ 和 __65535__ 之间的数字，这是你的shadowsocks服务的端口号，记住它，然后按Enter；
+
+3. 当提示`Input your password: `时，输入一个密码，这个密码将用于连接你的shadowsocks服务，记住它，然后按Enter；
+
+当提示`Done!`时，配置就完成了，接下来只要配置好shadowsocks客户端，就可以顺利翻墙了。
