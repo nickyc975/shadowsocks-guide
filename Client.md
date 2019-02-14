@@ -36,7 +36,7 @@
 
 ![shadowsocks-settings](./img/shadowsocks-settings.png)
 
-勾选上`启动系统代理`、`开机启动`和`允许其他设备连入`即可。现在就可以打开浏览器试试能不能访问Google了。
+勾选上`启动系统代理`和`开机启动`即可。现在就可以打开浏览器试试能不能访问Google了。
 
 ## Linux客户端安装配置
 
