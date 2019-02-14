@@ -112,7 +112,6 @@ __注意：使用上面这个链接注册，可以直接获得50美元试用金�
 
 * Windows用户配置指南
 
-
 1. 点击[这里](https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.70-installer.msi)下载安装PuTTY，安装过程一路下一步即可。
 
 2. 打开PuTTY，界面如图：
@@ -148,3 +147,12 @@ apt install curl -y && sh -c "$(curl -fsSL https://raw.githubusercontent.com/nic
 3. 当提示`Input your password: `时，输入一个密码，这个密码将用于连接你的shadowsocks服务，记住它，然后按Enter；
 
 当提示`Done!`时，配置就完成了，接下来只要配置好shadowsocks客户端，就可以顺利翻墙了。
+
+* Linux用户配置指南（Debian系发行版）
+
+
+1. 打开终端，使用ssh连接到服务器。ssh的用法对于Linux用户应该不是问题。
+
+2. 然后按照Windows配置指南的第三步安装配置好shadowsocks服务端即可。
+
+至此，shadowsocks服务器端就配置完成了，接下来配置客户端，教程在这里：[Shadowsocks 教程：客户端篇](./Client.md)
