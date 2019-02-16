@@ -40,6 +40,22 @@
 
 ## Linux客户端安装配置
 
+Linux用户可以直接执行以下命令完成客户端配置：
+
+```shell
+sudo apt install curl -y && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/nickyc975/shadowsocks-guide/master/scripts/deploy_client.sh)"
+```
+
+配置过程中需要输入三项信息：
+
+1. 当提示`Input your server ip address: `时，输入你服务器的IP地址，然后按Enter；
+
+2. 当提示`Input your server port: `时，输入你的shadowsocks服务的端口号，然后按Enter；
+
+3. 当提示`Input your password: `时，输入shadowsocks服务的密码，然后按Enter；
+
+当提示`Done!`时，配置就完成了，接下来只要配置好浏览器的代理，就可以顺利翻墙了。
+
 ## Chrome浏览器代理设置
 
 ## Android客户端安装配置
