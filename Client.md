@@ -58,4 +58,64 @@ sudo apt install curl -y && sudo sh -c "$(curl -fsSL https://raw.githubuserconte
 
 ## Chrome浏览器代理设置
 
+由于在Linux系统下shadowsocks客户端只支持socks 5代理，所以安装配置好客户端之后还需要配置系统代理才能实现翻墙。不过鉴于通常是使用浏览器翻墙，所以也可以只配置浏览器的代理，不需要配置系统代理。这里就只介绍如何配置Chrome浏览器代理，关于配置系统代理可以参考[这里](https://blog.liuguofeng.com/p/4010)。
+
+1. 安装SwitchyOmega
+
+安装Chrome浏览器后，在终端下使用如下命令启动Chrome：
+
+```shell
+google-chrome-stable --proxy-server=socks5://127.0.0.1:1080
+```
+
+这将使得Chrome临时使用shadowsocks代理访问网络，即能够临时翻墙。
+
+然后在Chrome里访问这个链接，下载安装[SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)，这是一个Chrome浏览器扩展，可以帮助你快速配置浏览器代理。
+
+2. 设置代理
+
+安装完SwitchyOmega之后会自动跳转到这个界面（如果提示查看教程，直接点`跳过教程`即可）：
+
+![switchyomega-about](./img/switchyomega-about.png)
+
+点击左侧的proxy，进入这个界面：
+
+![switchyomega-proxy](./img/switchyomega-proxy.png)
+
+在这里我们可以就配置代理信息，具体如下：
+
+* 代理协议选择`SOCKS5`；
+* 代理服务器填`127.0.0.1`；
+* 代理端口填`1080`；
+
+填写完成后应该如图所示：
+
+![switchyomega-proxy-filled](./img/switchyomega-proxy-filled.png)
+
+然后点击左侧的应用选项保存配置。
+
+接下来配置代理规则，点击左侧的`auto switch`，可以看到如下界面：
+
+![switchyomega-auto_switch](./img/switchyomega-auto_switch.png)
+
+首先点击红色的删除键删除已有的两条规则，删除后如图：
+
+![switchyomega-auto_switch-clean](./img/switchyomega-auto_switch-clean.png)
+
+然后点击`导入在线规则列表`下方的`添加规则列表`，如图：
+
+![switchyomega-auto_switch-filling](./img/switchyomega-auto_switch-filling.png)
+
+可以看到切换规则里自动生成了一个`规则列表规则`，接下来按如下规则填写：
+
+* `规则列表规则`那一行的`情景模式`列选择`proxy`；
+* `规则列表格式`选`AutoProxy`；
+* `规则列表网址`填这个链接：`https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt`
+
+填写完后先点`应用选项`，再点`立即更新情景模式`，等更新完成后界面如图：
+
+![switchyomega-auto_switch-filled](./img/switchyomega-auto_switch-filled.png)
+
+到这里，浏览器的代理设置就搞定了。现在关掉Chrome浏览器并通过桌面图标重新打开，然后点击浏览器右上角的SwitchyOmega的图标，选择`auto switch`，就可以正常访问被墙的网站了。
+
 ## Android客户端安装配置
