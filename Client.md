@@ -119,3 +119,35 @@ google-chrome-stable --proxy-server=socks5://127.0.0.1:1080
 到这里，浏览器的代理设置就搞定了。现在关掉Chrome浏览器并通过桌面图标重新打开，然后点击浏览器右上角的SwitchyOmega的图标，选择`auto switch`，就可以正常访问被墙的网站了。
 
 ## Android客户端安装配置
+
+首先从[这里](https://github.com/shadowsocks/shadowsocks-android/releases)下载安装最新的shadowsocks安卓客户端。如果你不知到该下哪个版本，那就下载`shadowsocks--universal-x.x.x.apk`，其中`x.x.x`是版本号。
+
+安装之后打开shadowsocks，界面如图：
+
+![shadowsocks-android-home](./img/shadowsocks-android-home.png)
+
+点击右上角的那个带加号的按钮，如图：
+
+![shadowsocks-android-add](./img/shadowsocks-android-add.png)
+
+点击手动设置，进入设置界面，如图：
+
+![shadowsocks-android-options_1](./img/shadowsocks-android-options_1.png)
+
+![shadowsocks-android-options_2](./img/shadowsocks-android-options_2.png)
+
+按照如下规则填写：
+
+* `配置名称`随意填；
+
+* `服务器`填你的服务器IP地址；
+
+* `远程端口`填之前记住的shadowsocks服务端口号；
+
+* `密码`填你设置的shadowsocks服务密码；
+
+* `加密方式`选`CHACHA20-IETF-POLY1305`；
+
+* `路由`选择`绕过局域网和中国大陆`；
+
+然后点右上角的勾，保存设置并返回首页，这时你就能在首页看到刚才新建的配置了。如果你没有填配置名称的话，配置名称就是你的服务器IP地址。接下来选中你的服务器，然后点首页下方的圆形按钮即可启动代理。通常这个时候系统会提醒你是否建立VPN链接，直接选是即可。然后就可以正常访问被墙的网站了。
