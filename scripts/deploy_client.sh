@@ -1,6 +1,7 @@
 #! /bin/sh
 
 echo "Installing shadowsocks-libev..."
+apt update
 apt install shadowsocks-libev -y
 
 echo "Configuring..."
